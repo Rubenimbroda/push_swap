@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+         #
+#    By: rubenior <rubenior@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/09/30 14:20:33 by rnuno-im          #+#    #+#              #
-#    Updated: 2025/11/06 11:37:15 by rnuno-im         ###   ########.fr        #
+#    Updated: 2025/11/12 16:12:51 by rubenior         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -36,7 +36,7 @@ $(NAME): $(OBJS)
 	$(AR) $(NAME) $(OBJS)
 
 %.o: %.c
-	$(CC) $(CFLAGS) $(OBJS) -c $< -o $@
+	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
 	$(RM) $(OBJS)

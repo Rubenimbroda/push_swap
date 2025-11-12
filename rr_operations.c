@@ -6,77 +6,40 @@
 /*   By: rubenior <rubenior@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 19:57:27 by rubenior          #+#    #+#             */
-/*   Updated: 2025/11/06 21:21:04 by rubenior         ###   ########.fr       */
+/*   Updated: 2025/11/10 10:38:50 by rubenior         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    op_rev_rotate(t_stack *s, const char *op_name)
+static void    op_rev_rotate(t_stack **stack)
 {
-    t_node  *current;
-    t_node  *previus;
+    t_stack *tmp;
+    t_stack *tail;
+    t_stack *before_tail;
 
-    current = s->top;
-    previus = NULL;
-    if (!s ||s->size < 2)
-        return ;
-    while (current->next)
-    {
-        previus = current;
-        current = current->next;
-    }
-    previus->next = NULL;
-    current->next = s->top;
-    s->top = current;
-    write(1, op_name, ft_strlen(op_name));
-    write(1, "\n", 1);
+    tail = get_last_element(*stack);
+    before_tail = get_before_last_element(*stack);
+    tmp = *stack;
+    *stack = tail;
+    (*stack)->next = tmp;
+    before_tail->next = NULL;
 }
 
-void op_rrr(t_stack *a, t_stack *b)
+void    rra(t_stack **a)
 {
-    t_node  *current;
-    t_node  *previus;
-
-    if (a && a->size >= 2)
-    {
-        current = a->top;
-        previus = NULL;
-        while (current->next)
-        {
-            previus = current;
-            current = current->next;
-        }
-        previus->next = NULL;
-        current->next = a->top;
-        a->top = current;
-    }
-    if (b && b->size >= 2)
-    {
-        current = b->top;
-        previus = NULL;
-        while (current->next)
-        {
-            previus = current;
-            current = current->next;
-        }
-        previus->next = NULL;
-        current->next = b->top;
-        b->top = current;
-    }
-    write(1, "rrr\n", 4);
+    op_rev_rotate(a);
+    ft_printf("rra\n");
+}
+void    rrb(t_stack **b)
+{
+    op_rev_rotate(b);
+    ft_printf("rrb\n");
 }
 
-void    rra(t_stack *a)
+void    rrr(t_stack **a, t_stack **b)
 {
-    op_rev_rotate(a, "rra");
-}
-void    rrb(t_stack *b)
-{
-    op_rev_rotate(b, "rrb");
-}
-
-void    rrr(t_stack *a, t_stack *b)
-{
-    op_rrr(a, b);
+    op_rev_rotate(a);
+    op_rev_rotate(b);
+    ft_printf("rrr\n");
 }

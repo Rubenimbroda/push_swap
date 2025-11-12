@@ -6,28 +6,31 @@
 /*   By: rubenior <rubenior@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 19:41:39 by rubenior          #+#    #+#             */
-/*   Updated: 2025/11/06 19:57:09 by rubenior         ###   ########.fr       */
+/*   Updated: 2025/11/10 10:26:19 by rubenior         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void    op_push(t_stack *dst, t_stack *src, const char *op_name)
+void    op_push(t_stack **src, t_stack **dest)
 {
-    t_node *n;
-    n = pop_node(src);
-    if (!n)
+    t_stack *tmp;
+
+    if (*src == NULL)
         return ;
-    push_node(dst, n);
-    write(1, op_name, ft_strlen(op_name));
-    write(1, "\n", 1);
+    tmp = (*src)->next;
+    (*src)->next = *dest;
+    *dest = *src;
+    *src = tmp;
 }
 
-void    pa(t_stack *a, t_stack *b)
+void    pa(t_stack **a, t_stack **b)
 {
-    op_push(a, b, "pa");
+    op_push(b, a);
+    ft_printf("pa\n");
 }
-void    pb(t_stack *a, t_stack *b)
+void    pb(t_stack **a, t_stack **b)
 {
-    op_push(b, a, "pb");
+    op_push(a, b);
+    ft_printf("pb\n");
 }

@@ -6,77 +6,39 @@
 /*   By: rubenior <rubenior@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 15:50:02 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/11/06 20:15:41 by rubenior         ###   ########.fr       */
+/*   Updated: 2025/11/10 10:25:15 by rubenior         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-void	op_rotate(t_stack *s, const char *op_name)
+void	op_rotate(t_stack **stack)
 {
-	t_node	*first;
-	t_node	*current;
-	
-	first = pop_node(s);
-	current = s->top;
-	if (!s || s->size < 2)
-		return ;
-	if (!current)
-	{
-		push_node(s, first);
-		return ;
-	}
-	while (current->next)
-		current = current->next;
-	current->next = first;
-	first->next = NULL;
-	s->size++;
-	s->size--;
-	write(1, op_name, ft_strlen(op_name));
-	write(1, "\n", 1);
+	t_stack	*tmp;
+	t_stack	*tail;
+
+	tmp = *stack;
+	*stack = (*stack)->next;
+	tail = get_last_element(*stack);
+	tmp->next = NULL;
+	tail->next = tmp;
 }
 
-void    op_rr(t_stack *a, t_stack *b)
+void	ra(t_stack **a)
 {
-    t_node *first;
-    t_node *current;
-    
-    if (a && a->size >= 2)
-    {
-        first = pop_node(a);
-        current = a->top;
-        while (current->next)
-            current = current->next;
-        current->next = first;
-        first->next = NULL;
-        a->size++;
-        a->size--;
-    }
-	if (b && b->size >= 2)
-	{
-		first = pop_node(b);
-		current = b->top;
-		while (current->next)
-			current = current->next;
-		current->next = first;
-		first = NULL;
-		b->size++;
-		b->size--;
-	}
-	write(1, "rr\n", 3);
+	op_rotate(a);
+	ft_printf("ra\n");
 }
 
-void	ra(t_stack *a)
+void	rb(t_stack **b)
 {
-	op_rotate(a, "ra");
+	op_rotate(b);
+	ft_printf("rb\n");
 }
 
-void	rb(t_stack *b)
+void    rr(t_stack **a, t_stack **b)
 {
-	op_rotate(b, "rb");
-}
-
-void	rr(t_stack *a, t_stack *b)
-{
-	op_rr(a, b);
+    op_rotate(a);
+	op_rotate(b);
+	ft_printf("rr\n");
 }
