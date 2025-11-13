@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line_utils.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rubenior <rubenior@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/08 15:51:00 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/11/12 16:18:10 by rubenior         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:41:46 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_strchr(const char *str, int c)
 	return (NULL);
 }
 
-size_t	ft_strlen(const char *str)
+/* size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
@@ -40,7 +40,7 @@ size_t	ft_strlen(const char *str)
 	while (str[i])
 		i++;
 	return (i);
-}
+} */
 
 char	*ft_strjoin_gnl(char *s1, const char *s2)
 {

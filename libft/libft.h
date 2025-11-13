@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rubenior <rubenior@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/29 14:37:23 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/11/12 18:17:21 by rubenior         ###   ########.fr       */
+/*   Updated: 2025/11/13 14:51:57 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,14 @@
 # include <stdlib.h>
 # include <stdarg.h>
 # include <limits.h>
+# include <stdio.h>
 
 # ifndef BUFFER_SIZE
 #  define BUFFER_SIZE 42
 # endif
 
 size_t			ft_strlen(const char str[]);
-int     		ft_atoi(const char *nptr);
+int				ft_atoi(const char *nptr);
 void			ft_bzero(void *s, size_t n);
 int				ft_isalnum(int c);
 int				ft_isalpha(int c);

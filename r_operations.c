@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   r_operations.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rubenior <rubenior@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 15:50:02 by rnuno-im          #+#    #+#             */
-/*   Updated: 2025/11/10 10:25:15 by rubenior         ###   ########.fr       */
+/*   Updated: 2025/11/13 10:53:53 by rnuno-im         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,9 @@ void	rb(t_stack **b)
 	ft_printf("rb\n");
 }
 
-void    rr(t_stack **a, t_stack **b)
+void	rr(t_stack **a, t_stack **b)
 {
-    op_rotate(a);
+	op_rotate(a);
 	op_rotate(b);
 	ft_printf("rr\n");
 }

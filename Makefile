@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rubenior <rubenior@student.42.fr>          +#+  +:+       +#+         #
+#    By: rnuno-im <rnuno-im@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/06 11:21:07 by rnuno-im          #+#    #+#              #
-#    Updated: 2025/11/12 15:57:20 by rubenior         ###   ########.fr        #
+#    Updated: 2025/11/13 14:50:01 by rnuno-im         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ LIBFT	=	./libft/libft.a
 SRCS	=	cost.c imput_check_utils.c imput_check.c movements.c \
 			p_operations.c positions.c push_swap.c r_operations.c \
 			rr_operations.c s_operations.c sort_big.c sort_small.c \
-			stack_utils.c utils.c 
+			stack_utils.c utils.c utils_2.c utils_3.c
 
 OBJS	= $(SRCS:.c=.o)
 
